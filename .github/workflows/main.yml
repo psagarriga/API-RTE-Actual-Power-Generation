@@ -27,6 +27,7 @@ jobs:
 
 
 
+
       - name: commit files
         run: |
           git config --local user.email "action@github.com"
@@ -38,3 +39,6 @@ jobs:
           
       - name: push changes
         uses: ad-m/github-push-action@v0.6.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+          branch: main 
