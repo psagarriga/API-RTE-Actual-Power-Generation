@@ -25,24 +25,18 @@ jobs:
           pip install requests pandas matplotlib plotly
 
       - name: Execute Python script
-        env:
-          MY_SECRET_TOKEN: §{{ secrets.MY_SECRET_TOKEN1 }}
+
         run: python Graphs_Power_Generation.py
 
 
 
 
-      - name: commit files
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add -A
-          git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
-          
-          
-          
-      - name: push changes
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.MY_SECRET_TOKEN1 }}
-          branch: main 
+- name: Commit and push changes
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  run: |
+    git config --local user.email "action@github.com"
+    git config --local user.name "GitHub Action"
+    git add .
+    git commit -m "Generate HTML file"
+    git push origin HEAD:main
