@@ -1,7 +1,12 @@
-name: Run Python Script
+name: Python Script API Power Generation 
 
 on:
-  workflow_dispatch: # Manually trigger the workflow
+ workflow_dispatch: # Manually trigger the workflow
+ 
+ #schedule:
+ #   - cron: '0 0/2 * * *' # At minute 0 past every 2 hours
+
+
 
 jobs:
   run-python:

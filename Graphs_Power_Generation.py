@@ -63,7 +63,7 @@ from datetime import datetime, timedelta
 ending_date = datetime.now()
 
 # Calculate the start date as 10 days before the end date
-starting_date = ending_date - timedelta(days=10)
+starting_date = ending_date - timedelta(days=20)
 
 # Format the dates in the required format
 start_date_str = starting_date.strftime("%Y-%m-%dT%H:%M:%S%z")+"%2B02:00"
