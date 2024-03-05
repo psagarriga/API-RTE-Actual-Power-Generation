@@ -1,8 +1,10 @@
 name: Python Script
 
 on:
-  schedule:
-    - cron: '0 0/2 * * *' # At minute 0 past every 2 hours
+ workflow_dispatch: 
+ 
+ #schedule:
+ #   - cron: '0 0/2 * * *' # At minute 0 past every 2 hours
 
 jobs:
   build:
